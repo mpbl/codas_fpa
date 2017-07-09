@@ -29,7 +29,7 @@ int main()
     // 1) What's wrong with:
     world_population<int32_t>();
     // 2) Fix it:
-    // ...
+    world_population<int64_t>();
 
     return 0;
 }

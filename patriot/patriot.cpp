@@ -33,7 +33,24 @@ float kahan_sum(float const* input, size_t n)
 
 void patriot_kahan()
 {
-  // Fill me...
+    float tenth = 0.1f;
+    float time_since_boot = 0.f;
+    long long nsteps = 0;
+
+    float compensation = 0.f;
+
+    while (nsteps < 1000000) {
+        float y = tenth - compensation;
+        float s = time_since_boot + y;
+
+        compensation = (s - time_since_boot) - y;
+        time_since_boot = s;
+
+        ++nsteps;
+        if (nsteps < 21 || nsteps % 36000 == 0)
+            printf("%lld %f %a\n", nsteps, time_since_boot, time_since_boot);
+    }
+
 }
 
 int main()
