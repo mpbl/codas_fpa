@@ -12,7 +12,10 @@ public:
         std::mt19937 gen(rd());
         std::uniform_real_distribution<float> dist1(std::numeric_limits<float>::min(), 1);
 
-        std::generate(v.begin(), v.begin() + n, [&dist1, &gen] { return dist1(gen); });
+        // std::generate(v.begin(), v.begin() + n, [&dist1, &gen] { return dist1(gen); });
+        for (auto &x: v) {
+            x = dist1(gen);
+        }
     }
 
     float sum()

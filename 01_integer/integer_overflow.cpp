@@ -9,11 +9,11 @@ void world_population() {
     std::cout << "Sizeof(Integer) : " << sizeof(Integer) << std::endl;
 
     std::map<std::string, Integer> continents = {
-            {"africa", 1'044'107'001},
-            {"americas", 943'952'001},
-            {"asia",   4'169'860'001},
-            {"europe",   735'395'001},
-            {"oceania",   36'411'001}
+            {"africa",  1044107001},
+            {"americas", 943952001},
+            {"asia",    4169860001},
+            {"europe",   735395001},
+            {"oceania",   36411001}
     };
 
     Integer total = 0;
