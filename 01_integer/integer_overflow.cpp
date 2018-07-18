@@ -18,18 +18,21 @@ void world_population() {
 
     Integer total = 0;
     for (auto &continent : continents) {
+        std::cout << continent.first << " : " << continent.second << std::endl;
         total += continent.second;
     }
     std::cout <<  "Total world population : " << total << std::endl;
+    std::cout <<  "Larger than Asia alone : " << (total > continents["asia"] ? "true" : "false") << std::endl;
 }
 
 
 int main()
 {
     // 1) What's wrong with:
-    world_population<int32_t>();
+    world_population<uint32_t>();
     // 2) Fix it:
-    world_population<int64_t>();
+    std::cout << "----------  Solution ------------\n";
+    world_population<uint64_t>();
 
     return 0;
 }
